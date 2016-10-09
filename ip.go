@@ -2,18 +2,14 @@ package main
 
 import (
         "fmt"
-        "os"
 	"net/http"
 	"io/ioutil"
 )
 
 func main() {
-        if len(os.Args) != 2 {
-                fmt.Println(os.Stderr, "Usage: ip URL\n")
-                os.Exit(1)
-        }
+        url := "http://whatismyip.akamai.com/"
 
-	res, err := http.Get(os.Args[1])
+	res, err := http.Get(url)
 
 	if err != nil {
         	panic(err.Error())
